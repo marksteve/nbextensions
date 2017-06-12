@@ -1,0 +1,25 @@
+Type: IPython Notebook Extension
+Name: Slack Notify
+Description: Triggers a Slack notification after a cell finishes running
+Link: README.md
+Main: main.js
+Compatibility: 5.x
+Parameters:
+- name: slack_notify_token
+  description: Slack API token (https://api.slack.com/custom-integrations/legacy-tokens)
+  input_type: text
+- name: slack_notify_channel
+  description: Slack channel to post notifications in
+  default: '#general'
+  input_type: text
+- name: slack_notify_threshold
+  description: Minimum execution time (in seconds) for notifications to trigger
+  default: 60
+  input_type: number
+  min: 0
+  step: 1
+  default: 60
+- name: slack_notify_as_user
+  description: Send notification as the authenticated user
+  default: false
+  input_type: checkbox
